@@ -1,0 +1,8 @@
+{
+  "name": "enhaIA",
+  "description": "A friendly AI assistant named enhaIA. Chat with enhaIA to get help, brainstorm, and more.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+    <!-- Background -->
+    <rect width="512" height="512" fill="#0A192F"/>
+
+    <defs>
+        <!-- Gradient for the moon. The center is towards the inner curve. -->
+        <radialGradient id="moon-gradient" cx="0.35" cy="0.5" r="0.65">
+            <stop offset="0%" stop-color="#FDE68A"/>
+            <stop offset="60%" stop-color="#FBBF24"/>
+            <stop offset="100%" stop-color="#F97316"/>
+        </radialGradient>
+
+        <!-- Mask to create the crescent shape -->
+        <mask id="crescent-mask">
+            <rect x="0" y="0" width="512" height="512" fill="white" />
+            <!-- The cutting circle is offset to the right -->
+            <circle cx="310" cy="220" r="110" fill="black" />
+        </mask>
+
+        <!-- Gradient for the small sphere -->
+        <radialGradient id="dot-gradient" cx="0.4" cy="0.4" r="0.5">
+            <stop offset="0%" stop-color="#FEF3C7"/>
+            <stop offset="100%" stop-color="#FCD34D"/>
+        </radialGradient>
+        
+        <!-- Glow effect for the small sphere -->
+        <filter id="glow-filter" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur"/>
+        </filter>
+    </defs>
+
+    <!-- The crescent moon -->
+    <!-- The main circle -->
+    <circle cx="256" cy="220" r="120" fill="url(#moon-gradient)" mask="url(#crescent-mask)" />
+    
+    <!-- The small sphere with glow -->
+    <!-- Glow layer -->
+    <circle cx="280" cy="220" r="22" fill="#FBBF24" opacity="0.7" filter="url(#glow-filter)" />
+    <!-- Main sphere -->
+    <circle cx="280" cy="220" r="22" fill="url(#dot-gradient)" />
+    
+    <!-- The text -->
+    <text x="256" y="410" font-family="sans-serif" font-size="60" font-weight="400" fill="#E6D5B8" text-anchor="middle" letter-spacing="15">
+        ENHAIA
+    </text>
+</svg>
